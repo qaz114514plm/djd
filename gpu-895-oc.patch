@@ -1,0 +1,95 @@
+diff --git a/arch/arm64/boot/dts/qcom/sm6150-gpu.dtsi b/arch/arm64/boot/dts/qcom/sm6150-gpu.dtsi
+index 70a4481..9516a22 100644
+--- a/arch/arm64/boot/dts/qcom/sm6150-gpu.dtsi
++++ b/arch/arm64/boot/dts/qcom/sm6150-gpu.dtsi
+@@ -168,21 +168,30 @@
+ 
+ 				qcom,speed-bin = <0>;
+ 
+-				qcom,initial-pwrlevel = <5>;
+-				qcom,ca-target-pwrlevel = <3>;
++				qcom,initial-pwrlevel = <6>;
++				qcom,ca-target-pwrlevel = <4>;
+ 
+-				/* TURBO */
++				/* TURBO L1 (violet OC by FJ) */
+ 				qcom,gpu-pwrlevel@0 {
+ 					reg = <0>;
+-					qcom,gpu-freq = <845000000>;
++					qcom,gpu-freq = <895000000>;
+ 					qcom,bus-freq = <11>;
+ 					qcom,bus-min = <10>;
+ 					qcom,bus-max = <11>;
+ 				};
+ 
+-				/* NOM L1 */
++				/* TURBO */
+ 				qcom,gpu-pwrlevel@1 {
+ 					reg = <1>;
++					qcom,gpu-freq = <845000000>;
++					qcom,bus-freq = <11>;
++					qcom,bus-min = <10>;
++					qcom,bus-max = <11>;
++				};
++
++				/* NOM L1 */
++				qcom,gpu-pwrlevel@2 {
++					reg = <2>;
+ 					qcom,gpu-freq = <745000000>;
+ 					qcom,bus-freq = <10>;
+ 					qcom,bus-min = <9>;
+@@ -190,8 +199,8 @@
+ 				};
+ 
+ 				/* NOM */
+-				qcom,gpu-pwrlevel@2 {
+-					reg = <2>;
++				qcom,gpu-pwrlevel@3 {
++					reg = <3>;
+ 					qcom,gpu-freq = <700000000>;
+ 					qcom,bus-freq = <9>;
+ 					qcom,bus-min = <8>;
+@@ -199,8 +208,8 @@
+ 				};
+ 
+ 				/* SVS L1 */
+-				qcom,gpu-pwrlevel@3 {
+-					reg = <3>;
++				qcom,gpu-pwrlevel@4 {
++					reg = <4>;
+ 					qcom,gpu-freq = <550000000>;
+ 					qcom,bus-freq = <8>;
+ 					qcom,bus-min = <7>;
+@@ -208,8 +217,8 @@
+ 				};
+ 
+ 				/* SVS */
+-				qcom,gpu-pwrlevel@4 {
+-					reg = <4>;
++				qcom,gpu-pwrlevel@5 {
++					reg = <5>;
+ 					qcom,gpu-freq = <435000000>;
+ 					qcom,bus-freq = <7>;
+ 					qcom,bus-min = <5>;
+@@ -217,8 +226,8 @@
+ 				};
+ 
+ 				/* Low SVS */
+-				qcom,gpu-pwrlevel@5 {
+-					reg = <5>;
++				qcom,gpu-pwrlevel@6 {
++					reg = <6>;
+ 					qcom,gpu-freq = <290000000>;
+ 					qcom,bus-freq = <4>;
+ 					qcom,bus-min = <4>;
+@@ -226,8 +235,8 @@
+ 				};
+ 
+ 				/* XO */
+-				qcom,gpu-pwrlevel@6 {
+-					reg = <6>;
++				qcom,gpu-pwrlevel@7 {
++					reg = <7>;
+ 					qcom,gpu-freq = <0>;
+ 					qcom,bus-freq = <0>;
+ 					qcom,bus-min = <0>;
